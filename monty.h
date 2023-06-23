@@ -38,7 +38,7 @@ typedef struct instruction_s
 
 typedef struct mon_s
 {
-	str* arg;
+	str *arg;
 
 }
 
