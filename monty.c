@@ -11,6 +11,8 @@
 int main(int argc, char *argv[])
 {
 	FILE *file;
+	char *lineptr, *command, *command2;
+	size_t n;
 
 	if (argc != 2)
 	{
@@ -25,6 +27,11 @@ int main(int argc, char *argv[])
 		exit(EXIT_FAILURE);
 	}
 
+	while (getline(&lineptr, &n, file) != -1)
+	{
+		command = strtok(lineptr, " ");
+		mon_s.arg = strtok(NULL, " ");
+		printf("%s %s\n", command, mon_s.arg);
+	}
 	return (0);
 }
-
